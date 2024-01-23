@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculadoraMVVM_RERM.MainPage">
+    
+
+    <StackLayout BackgroundColor="#111">
+        <Label HorizontalOptions="End" Padding="8,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span x:Name="spnFirst" Text="" FontSize="36" TextColor="#aaa"/>
+                        <Span x:Name="spnSecond" Text="" FontSize="32" TextColor="#555"/>
+                        <Span x:Name="spnThird" Text="" FontSize="36" TextColor="#bbb"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label x:Name="lblNumber" HorizontalOptions="End" Text="{Binding Mensaje}" TextColor="#fff" Margin="0,0,16,0" FontSize="84" FontAttributes="Bold"/>
+        <Frame AbsoluteLayout.LayoutBounds="0,.95,1,0.62" AbsoluteLayout.LayoutFlags="SizeProportional,YProportional" BackgroundColor="#333" HasShadow="False" CornerRadius="45">
+            <Grid AbsoluteLayout.LayoutBounds="0,1,1,0.62" AbsoluteLayout.LayoutFlags="SizeProportional,YProportional" 
+                RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" Padding="10" RowSpacing="4" ColumnSpacing="4">
+                <Frame Grid.Column="0" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="38" VerticalOptions="Fill" Text="+" BackgroundColor="#333" Command="{Binding SumarCommand}"/>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" Padding="6,0,0,4" FontSize="38" VerticalOptions="Fill" Text="-" BackgroundColor="#333" Command="{Binding RestarCommand}"/>
+                </Frame>
+                <Frame Grid.Column="2" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" Padding="2,0,0,8" FontSize="36" VerticalOptions="Fill" Text="x" TextTransform="None" BackgroundColor="#333" Command="{Binding MultiplicarCommand}"/>
+                </Frame>
+                <Frame Grid.Column="3" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" Padding="4,0,0,2" FontSize="42" VerticalOptions="Fill" Text="÷" BackgroundColor="#333" Command="{Binding DividirCommand}"/>
+                </Frame>
+                <Frame Grid.Column="0" Grid.Row="1" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="7" BackgroundColor="#333" Command="{Binding Num7Command}"/>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="1" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="8" BackgroundColor="#333" Command="{Binding Num8Command}"/>
+                </Frame>
+                <Frame Grid.Column="2" Grid.Row="1" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="9" BackgroundColor="#333" Command="{Binding Num9Command}"/>
+                </Frame>
+                <Frame Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="Brown" FontSize="28" HorizontalOptions="Fill" Text="AC" BackgroundColor="#333" Command="{Binding LimpiarCommand}"/>
+                </Frame>
+                <Frame Grid.Column="0" Grid.Row="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="4" BackgroundColor="#333" Command="{Binding Num4Command}"/>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="5" BackgroundColor="#333" Command="{Binding Num5Command}"/>
+                </Frame>
+                <Frame Grid.Column="2" Grid.Row="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="6" BackgroundColor="#333" Command="{Binding Num6Command}"/>
+                </Frame>
+                <Frame Grid.Column="0" Grid.Row="3" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="1" BackgroundColor="#333" Command="{Binding Num1Command}"/>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="3" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="2" BackgroundColor="#333" Command="{Binding Num2Command}"/>
+                </Frame>
+                <Frame Grid.Column="2" Grid.Row="3" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="3" BackgroundColor="#333" Command="{Binding Num3Command}"/>
+                </Frame>
+                <Frame Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Padding="0" Margin="12" CornerRadius="20" BackgroundColor="White">
+                    <Button TextColor="#555" FontSize="38" VerticalOptions="Fill" Text="=" BackgroundColor="White" Command="{Binding EqualsCommand}"/>
+                </Frame>
+                <Frame Grid.Column="0" Grid.Row="4" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" Padding="0,0,0,16" FontSize="48" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Text="⇽" FontAttributes="Bold" BackgroundColor="#333" Command="{Binding ReturnCommand}"/>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="4" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="0" BackgroundColor="#333" Command="{Binding Num0Command}"/>
+                </Frame>
+                <Frame Grid.Column="2" Grid.Row="4" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
+                    <Button TextColor="#fff" FontSize="36" FontAttributes="Bold" VerticalOptions="Fill" Text="." BackgroundColor="#333" Command="{Binding PointCommand}"/>
+                </Frame>
+            </Grid>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
