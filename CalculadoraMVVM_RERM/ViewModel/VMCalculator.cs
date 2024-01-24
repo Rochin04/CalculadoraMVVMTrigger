@@ -62,14 +62,22 @@ namespace CalculadoraMVVM_RERM.ViewModel
         }
         private void Btn_sumar()//object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n1) && !string.IsNullOrEmpty(n2))
+            {
+                CalcularResultado();
+            }
             operador = "+";
             ActualizarPantalla();
-            BackgroundCOlor = "#ffffff";
-            textCOlor = "#000000";
+            //backgroundCOlor = "#ffffff";
+            //textCOlor = "#000000";
         }
 
         private void Btn_restar()//object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n1) && !string.IsNullOrEmpty(n2))
+            {
+                CalcularResultado();
+            }
             operador += "-";
             ActualizarPantalla();
             //BackgroundCOlor = "#ffffff";
@@ -78,6 +86,10 @@ namespace CalculadoraMVVM_RERM.ViewModel
 
         private void Btn_por()//object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n1) && !string.IsNullOrEmpty(n2))
+            {
+                CalcularResultado();
+            }
             operador += "x";
             ActualizarPantalla();
             //BackgroundCOlor = "#ffffff";
@@ -86,12 +98,52 @@ namespace CalculadoraMVVM_RERM.ViewModel
 
         private void Btn_dividir()//object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n1) && !string.IsNullOrEmpty(n2))
+            {
+                CalcularResultado();
+            }
             operador += "÷";
             ActualizarPantalla();
-            //BackgroundCOlor = "#ffffff";
-            //textCOlor = "#000000";
+            ActivationButton = true;
         }
+        private void CalcularResultado()
+        {
+            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n1) && !string.IsNullOrEmpty(n2))
+            {
+                double numero1 = double.Parse(n1);
+                double numero2 = double.Parse(n2);
+                double resultado = 0;
 
+                switch (operador)
+                {
+                    case "+":
+                        resultado = numero1 + numero2;
+                        break;
+                    case "-":
+                        resultado = numero1 - numero2;
+                        break;
+                    case "x":
+                        resultado = numero1 * numero2;
+                        break;
+                    case "÷":
+                        if (numero2 != 0)
+                        {
+                            resultado = numero1 / numero2;
+                        }
+                        else
+                        {
+                            Mensaje = "Error";
+                            return;
+                        }
+                        break;
+                }
+
+                Mensaje = resultado.ToString();
+                n1 = resultado.ToString();
+                n2 = "";
+                operador = "";
+            }
+        }
         private void Btn_AC()//object sender, EventArgs e)
         {
             n1 = "";
@@ -259,202 +311,3 @@ namespace CalculadoraMVVM_RERM.ViewModel
         #endregion
     }
 }
-/*
- public partial class MainPage : ContentPage
-    {
-        private string n1 = "";
-        private string n2 = "";
-        private string operador = "";
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void ActualizarPantalla()
-        {
-            lblNumber.Text = n1 + operador + n2;
-        }
-
-        private void Btn_sumar(object sender, EventArgs e)
-        {
-            operador = "+";
-            ActualizarPantalla();
-        }
-
-        private void Btn_restar(object sender, EventArgs e)
-        {
-            operador = "-";
-            ActualizarPantalla();
-        }
-
-        private void Btn_por(object sender, EventArgs e)
-        {
-            operador = "x";
-            ActualizarPantalla();
-        }
-
-        private void Btn_dividir(object sender, EventArgs e)
-        {
-            operador = "÷";
-            ActualizarPantalla();
-        }
-
-        private void Btn_AC(object sender, EventArgs e)
-        {
-            n1 = "";
-            n2 = "";
-            operador = "";
-            lblNumber.Text = "0";
-        }
-
-        private void Click_seven(object sender, EventArgs e)
-        {
-            AgregarNumero("7");
-        }
-
-        private void Click_eight(object sender, EventArgs e)
-        {
-            AgregarNumero("8");
-        }
-
-        private void Click_nine(object sender, EventArgs e)
-        {
-            AgregarNumero("9");
-        }
-
-        private void Click_four(object sender, EventArgs e)
-        {
-            AgregarNumero("4");
-        }
-
-        private void Click_five(object sender, EventArgs e)
-        {
-            AgregarNumero("5");
-        }
-
-        private void Click_six(object sender, EventArgs e)
-        {
-            AgregarNumero("6");
-        }
-
-        private void Click_one(object sender, EventArgs e)
-        {
-            AgregarNumero("1");
-        }
-
-        private void Click_two(object sender, EventArgs e)
-        {
-            AgregarNumero("2");
-        }
-
-        private void Click_three(object sender, EventArgs e)
-        {
-            AgregarNumero("3");
-        }
-
-        private void Click_zero(object sender, EventArgs e)
-        {
-
-            AgregarNumero("0");
-        }
-
-        private void Click_point(object sender, EventArgs e)
-        {
-            if (!lblNumber.Text.Contains("."))
-            {
-                lblNumber.Text += ".";
-                if (string.IsNullOrEmpty(operador))
-                {
-                    n1 += ".";
-                }
-                else
-                {
-                    n2 += ".";
-                }
-            }
-        }
-
-        private void AgregarNumero(string numero)
-        {
-            if (string.IsNullOrEmpty(operador))
-            {
-                n1 += numero;
-            }
-            else
-            {
-                n2 += numero;
-            }
-
-            ActualizarPantalla();
-        }
-
-        private void Btn_equals(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n1) && !string.IsNullOrEmpty(n2))
-            {
-                double numero1 = double.Parse(n1);
-                double numero2 = double.Parse(n2);
-                double resultado = 0;
-
-                switch (operador)
-                {
-                    case "+":
-                        resultado = numero1 + numero2;
-                        break;
-                    case "-":
-                        resultado = numero1 - numero2;
-                        break;
-                    case "x":
-                        resultado = numero1 * numero2;
-                        break;
-                    case "÷":
-                        if (numero2 != 0)
-                        {
-                            resultado = numero1 / numero2;
-                        }
-                        else
-                        {
-                            lblNumber.Text = "Error";
-                            return;
-                        }
-                        break;
-                }
-
-                lblNumber.Text = resultado.ToString();
-                n1 = resultado.ToString();
-                n2 = "";
-                operador = "";
-            }
-        }
-
-        //private void Click_C(object sender, EventArgs e)
-        //{
-        //    if (!string.IsNullOrEmpty(operador))
-        //    {
-        //        n2 = "";
-        //    }
-        //    else
-        //    {
-        //        n1 = "";
-        //    }
-        //
-         //   lblNumber.Text = "";
-       // }
-
-        private void Click_return(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(operador) && !string.IsNullOrEmpty(n2))
-            {
-                n2 = n2.Remove(n2.Length - 1);
-            }
-            else if (!string.IsNullOrEmpty(n1))
-            {
-                n1 = n1.Remove(n1.Length - 1);
-            }
-
-            ActualizarPantalla();
-        }
-    }
- */
-

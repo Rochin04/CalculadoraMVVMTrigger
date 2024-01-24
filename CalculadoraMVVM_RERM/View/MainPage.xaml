@@ -21,46 +21,140 @@
             <Grid AbsoluteLayout.LayoutBounds="0,1,1,0.62" AbsoluteLayout.LayoutFlags="SizeProportional,YProportional" 
                 RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" Padding="10" RowSpacing="4" ColumnSpacing="4">
                 <Frame Grid.Column="0" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="38" VerticalOptions="Fill" Text="+" BackgroundColor="#333" Command="{Binding SumarCommand}"/>
+                    <Button TextColor="#fff" FontSize="38" VerticalOptions="Fill" Text="+" BackgroundColor="#333" Command="{Binding SumarCommand}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                                <Setter Property="BackgroundColor" Value="White"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="1" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" Padding="6,0,0,4" FontSize="38" VerticalOptions="Fill" Text="-" BackgroundColor="#333" Command="{Binding RestarCommand}"/>
+                    <Button TextColor="#fff" Padding="6,0,0,4" FontSize="38" VerticalOptions="Fill" Text="-" BackgroundColor="#333" Command="{Binding RestarCommand}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                                <Setter Property="BackgroundColor" Value="White"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="2" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" Padding="2,0,0,8" FontSize="36" VerticalOptions="Fill" Text="x" TextTransform="None" BackgroundColor="#333" Command="{Binding MultiplicarCommand}"/>
+                    <Button TextColor="#fff" Padding="2,0,0,8" FontSize="36" VerticalOptions="Fill" Text="x" TextTransform="None" BackgroundColor="#333" Command="{Binding MultiplicarCommand}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                                <Setter Property="BackgroundColor" Value="White"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="3" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" Padding="4,0,0,2" FontSize="42" VerticalOptions="Fill" Text="÷" BackgroundColor="#333" Command="{Binding DividirCommand}"/>
+                    <Button TextColor="#fff" Padding="4,0,0,2" FontSize="42" VerticalOptions="Fill" Text="÷" BackgroundColor="#333" Command="{Binding DividirCommand}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                                <Setter Property="BackgroundColor" Value="White"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="0" Grid.Row="1" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="7" BackgroundColor="#333" Command="{Binding Num7Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="7" BackgroundColor="#333" Command="{Binding Num7Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="1" Grid.Row="1" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="8" BackgroundColor="#333" Command="{Binding Num8Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="8" BackgroundColor="#333" Command="{Binding Num8Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="2" Grid.Row="1" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="9" BackgroundColor="#333" Command="{Binding Num9Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="9" BackgroundColor="#333" Command="{Binding Num9Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
                     <Button TextColor="Brown" FontSize="28" HorizontalOptions="Fill" Text="AC" BackgroundColor="#333" Command="{Binding LimpiarCommand}"/>
                 </Frame>
                 <Frame Grid.Column="0" Grid.Row="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="4" BackgroundColor="#333" Command="{Binding Num4Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="4" BackgroundColor="#333" Command="{Binding Num4Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="1" Grid.Row="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="5" BackgroundColor="#333" Command="{Binding Num5Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="5" BackgroundColor="#333" Command="{Binding Num5Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="2" Grid.Row="2" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="6" BackgroundColor="#333" Command="{Binding Num6Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="6" BackgroundColor="#333" Command="{Binding Num6Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="0" Grid.Row="3" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="1" BackgroundColor="#333" Command="{Binding Num1Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="1" BackgroundColor="#333" Command="{Binding Num1Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="1" Grid.Row="3" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="2" BackgroundColor="#333" Command="{Binding Num2Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="2" BackgroundColor="#333" Command="{Binding Num2Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="2" Grid.Row="3" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="3" BackgroundColor="#333" Command="{Binding Num3Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="3" BackgroundColor="#333" Command="{Binding Num3Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"  Padding="0" Margin="12" CornerRadius="20" BackgroundColor="White">
                     <Button TextColor="#555" FontSize="38" VerticalOptions="Fill" Text="=" BackgroundColor="White" Command="{Binding EqualsCommand}"/>
@@ -69,7 +163,13 @@
                     <Button TextColor="#fff" Padding="0,0,0,16" FontSize="48" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Text="⇽" FontAttributes="Bold" BackgroundColor="#333" Command="{Binding ReturnCommand}"/>
                 </Frame>
                 <Frame Grid.Column="1" Grid.Row="4" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
-                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="0" BackgroundColor="#333" Command="{Binding Num0Command}"/>
+                    <Button TextColor="#fff" FontSize="28" VerticalOptions="Fill" Text="0" BackgroundColor="#333" Command="{Binding Num0Command}">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#333" />
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                 </Frame>
                 <Frame Grid.Column="2" Grid.Row="4" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
                     <Button TextColor="#fff" FontSize="36" FontAttributes="Bold" VerticalOptions="Fill" Text="." BackgroundColor="#333" Command="{Binding PointCommand}"/>
