@@ -14,7 +14,10 @@ namespace CalculadoraMVVM_RERM.ViewModel
         private string n2 = "";
         private string operador = "";
         private string mensaje = "";
-        private bool activationButton;
+        private bool activationButtonSuma;
+        private bool activationButtonRest;
+        private bool activationButtonMulti;
+        private bool activationButtonDivi;
         private string backgroundCOlor;
         private string textCOlor;
         #endregion
@@ -29,10 +32,25 @@ namespace CalculadoraMVVM_RERM.ViewModel
             get { return backgroundCOlor; }
             set { SetValue(ref backgroundCOlor, value); }
         }
-        public bool ActivationButton
+        public bool ActivationButtonSuma
         {
-            get { return activationButton; }
-            set { SetValue(ref activationButton, value); }
+            get { return activationButtonSuma; }
+            set { SetValue(ref activationButtonSuma, value); }
+        }
+        public bool ActivationButtonResta
+        {
+            get { return activationButtonRest; }
+            set { SetValue(ref activationButtonRest, value); }
+        }
+        public bool ActivationButtonMulti
+        {
+            get { return activationButtonMulti; }
+            set { SetValue(ref activationButtonMulti, value); }
+        }
+        public bool ActivationButtonDivi
+        {
+            get { return activationButtonDivi; }
+            set { SetValue(ref activationButtonDivi, value); }
         }
         public string N1
         {
@@ -68,8 +86,7 @@ namespace CalculadoraMVVM_RERM.ViewModel
             }
             operador = "+";
             ActualizarPantalla();
-            //backgroundCOlor = "#ffffff";
-            //textCOlor = "#000000";
+            ActivationButtonSuma = true;
         }
 
         private void Btn_restar()//object sender, EventArgs e)
@@ -80,8 +97,7 @@ namespace CalculadoraMVVM_RERM.ViewModel
             }
             operador += "-";
             ActualizarPantalla();
-            //BackgroundCOlor = "#ffffff";
-            //textCOlor = "#000000";
+            ActivationButtonResta = true;
         }
 
         private void Btn_por()//object sender, EventArgs e)
@@ -92,8 +108,7 @@ namespace CalculadoraMVVM_RERM.ViewModel
             }
             operador += "x";
             ActualizarPantalla();
-            //BackgroundCOlor = "#ffffff";
-            //textCOlor = "#000000";
+            ActivationButtonMulti = true;
         }
 
         private void Btn_dividir()//object sender, EventArgs e)
@@ -104,7 +119,7 @@ namespace CalculadoraMVVM_RERM.ViewModel
             }
             operador += "÷";
             ActualizarPantalla();
-            ActivationButton = true;
+            ActivationButtonDivi = true;
         }
         private void CalcularResultado()
         {
@@ -154,52 +169,92 @@ namespace CalculadoraMVVM_RERM.ViewModel
         private void Num7()//object sender, EventArgs e)
         {
             AgregarNumero("7");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num8()//object sender, EventArgs e)
         {
             AgregarNumero("8");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num9()//object sender, EventArgs e)
         {
             AgregarNumero("9");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num4()//object sender, EventArgs e)
         {
             AgregarNumero("4");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num5()//object sender, EventArgs e)
         {
             AgregarNumero("5");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num6()//object sender, EventArgs e)
         {
             AgregarNumero("6");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num1()//object sender, EventArgs e)
         {
             AgregarNumero("1");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num2()//object sender, EventArgs e)
         {
             AgregarNumero("2");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num3()//object sender, EventArgs e)
         {
             AgregarNumero("3");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Num0()//object sender, EventArgs e)
         {
 
             AgregarNumero("0");
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Click_point()//object sender, EventArgs e)//

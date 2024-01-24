@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CalculadoraMVVM_RERM.MainPage">
-    
+             x:Class="CalculadoraMVVM_RERM.MainPage"
+             xmlns:disparador="clr-namespace:CalculadoraMVVM_RERM.Triggers.TCalculadora">
 
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <disparador:TButton x:Key="ActivationButtonSuma"/>
+            <disparador:TButton x:Key="ActivationButtonResta"/>
+            <disparador:TButton x:Key="ActivationButtonMulti"/>
+            <disparador:TButton x:Key="ActivationButtonDivi"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
     <StackLayout BackgroundColor="#111">
         <Label HorizontalOptions="End" Padding="8,0">
             <Label.FormattedText>
@@ -23,11 +31,11 @@
                 <Frame Grid.Column="0" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
                     <Button TextColor="#fff" FontSize="38" VerticalOptions="Fill" Text="+" BackgroundColor="#333" Command="{Binding SumarCommand}">
                         <Button.Triggers>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonSuma}" Value="True">
                                 <Setter Property="BackgroundColor" Value="White"/>
                                 <Setter Property="TextColor" Value="Black"/>
                             </DataTrigger>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonSuma}" Value="False">
                                 <Setter Property="BackgroundColor" Value="#333" />
                             </DataTrigger>
                         </Button.Triggers>
@@ -36,11 +44,11 @@
                 <Frame Grid.Column="1" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
                     <Button TextColor="#fff" Padding="6,0,0,4" FontSize="38" VerticalOptions="Fill" Text="-" BackgroundColor="#333" Command="{Binding RestarCommand}">
                         <Button.Triggers>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonResta}" Value="True">
                                 <Setter Property="BackgroundColor" Value="White"/>
                                 <Setter Property="TextColor" Value="Black"/>
                             </DataTrigger>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonResta}" Value="False">
                                 <Setter Property="BackgroundColor" Value="#333" />
                             </DataTrigger>
                         </Button.Triggers>
@@ -49,11 +57,11 @@
                 <Frame Grid.Column="2" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
                     <Button TextColor="#fff" Padding="2,0,0,8" FontSize="36" VerticalOptions="Fill" Text="x" TextTransform="None" BackgroundColor="#333" Command="{Binding MultiplicarCommand}">
                         <Button.Triggers>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonMulti}" Value="True">
                                 <Setter Property="BackgroundColor" Value="White"/>
                                 <Setter Property="TextColor" Value="Black"/>
                             </DataTrigger>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonMulti}" Value="False">
                                 <Setter Property="BackgroundColor" Value="#333" />
                             </DataTrigger>
                         </Button.Triggers>
@@ -62,11 +70,11 @@
                 <Frame Grid.Column="3" Grid.Row="0" Padding="0" Margin="12" CornerRadius="20" BackgroundColor="#332">
                     <Button TextColor="#fff" Padding="4,0,0,2" FontSize="42" VerticalOptions="Fill" Text="÷" BackgroundColor="#333" Command="{Binding DividirCommand}">
                         <Button.Triggers>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="True">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonDivi}" Value="True">
                                 <Setter Property="BackgroundColor" Value="White"/>
                                 <Setter Property="TextColor" Value="Black"/>
                             </DataTrigger>
-                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButton}" Value="False">
+                            <DataTrigger TargetType="Button" Binding="{Binding ActivationButtonDivi}" Value="False">
                                 <Setter Property="BackgroundColor" Value="#333" />
                             </DataTrigger>
                         </Button.Triggers>
