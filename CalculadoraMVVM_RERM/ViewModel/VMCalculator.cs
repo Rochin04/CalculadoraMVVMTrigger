@@ -87,6 +87,9 @@ namespace CalculadoraMVVM_RERM.ViewModel
             operador = "+";
             ActualizarPantalla();
             ActivationButtonSuma = true;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Btn_restar()//object sender, EventArgs e)
@@ -98,6 +101,9 @@ namespace CalculadoraMVVM_RERM.ViewModel
             operador += "-";
             ActualizarPantalla();
             ActivationButtonResta = true;
+            ActivationButtonSuma = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
 
         private void Btn_por()//object sender, EventArgs e)
@@ -109,6 +115,9 @@ namespace CalculadoraMVVM_RERM.ViewModel
             operador += "x";
             ActualizarPantalla();
             ActivationButtonMulti = true;
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonDivi = false;
         }
 
         private void Btn_dividir()//object sender, EventArgs e)
@@ -120,6 +129,10 @@ namespace CalculadoraMVVM_RERM.ViewModel
             operador += "÷";
             ActualizarPantalla();
             ActivationButtonDivi = true;
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            
         }
         private void CalcularResultado()
         {
@@ -165,6 +178,10 @@ namespace CalculadoraMVVM_RERM.ViewModel
             n2 = "";
             operador = "";
             Mensaje = "0";
+            ActivationButtonSuma = false;
+            ActivationButtonResta = false;
+            ActivationButtonMulti = false;
+            ActivationButtonDivi = false;
         }
         private void Num7()//object sender, EventArgs e)
         {
